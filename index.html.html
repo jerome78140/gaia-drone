@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GAIA Drone | Photo & Vidéo Aérienne</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#0b0b0b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:700;
+    letter-spacing:4px;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:0.95rem;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#c9a86a;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=1800&auto=format&fit=crop')
+    center/cover;
+    
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:5rem;
+    font-weight:700;
+    letter-spacing:8px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    font-weight:300;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 38px;
+    border:1px solid #c9a86a;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    letter-spacing:2px;
+}
+
+.btn:hover{
+    background:#c9a86a;
+    color:black;
+}
+
+/* SECTION */
+
+section{
+    padding:120px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:2.7rem;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#cfcfcf;
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:#141414;
+    padding:40px 30px;
+    border:1px solid #222;
+    transition:0.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-5px);
+    border-color:#c9a86a;
+}
+
+.service-card h3{
+    margin-bottom:20px;
+    color:#c9a86a;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.02);
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    height:550px;
+    object-fit:cover;
+}
+
+.about-text h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+}
+
+.about-text p{
+    color:#d0d0d0;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin-bottom:40px;
+    color:#d0d0d0;
+}
+
+form{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+input,
+textarea{
+    background:#141414;
+    border:none;
+    padding:18px;
+    color:white;
+    font-size:1rem;
+}
+
+textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+button{
+    cursor:pointer;
+    background:none;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px;
+    text-align:center;
+    border-top:1px solid #222;
+    color:#888;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .about img{
+        height:400px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">GAIA DRONE</div>
+
+<ul>
+<li><a href="#services">Prestations</a></li>
+<li><a href="#gallery">Galerie</a></li>
+<li><a href="#about">À propos</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>GAIA DRONE</h1>
+
+<p>
+Prestations professionnelles de photographie et vidéo aérienne.
+Télépilote certifié — Images cinématiques — Production 4K.
+</p>
+
+<a href="#contact" class="btn">DEMANDER UN DEVIS</a>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-title">
+<h2>Prestations</h2>
+<p>Des prises de vues aériennes modernes et professionnelles</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>Immobilier</h3>
+<p>
+Valorisation de biens immobiliers et propriétés de prestige.
+</p>
+</div>
+
+<div class="service-card">
+<h3>Événementiel</h3>
+<p>
+Captation vidéo et photo pour mariages, événements et festivals.
+</p>
+</div>
+
+<div class="service-card">
+<h3>Inspection</h3>
+<p>
+Inspection visuelle de bâtiments, toitures et infrastructures.
+</p>
+</div>
+
+<div class="service-card">
+<h3>Communication</h3>
+<p>
+Création de contenus premium pour entreprises et réseaux sociaux.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="section-title">
+<h2>Galerie</h2>
+<p>Quelques prises de vues aériennes</p>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1400&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1400&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1400&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?q=80&w=1400&auto=format&fit=crop">
+
+<div class="about-text">
+
+<h2>À propos</h2>
+
+<p>
+GAIA Drone propose des prestations aériennes professionnelles destinées aux particuliers, entreprises et collectivités.
+</p>
+
+<p>
+Toutes les missions sont réalisées dans le respect de la réglementation aérienne française avec les qualifications nécessaires.
+</p>
+
+<p>
+Notre objectif : produire des images élégantes, dynamiques et impactantes afin de valoriser vos projets.
+</p>
+
+<a href="#contact" class="btn">CONTACT</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+<h2>Contact</h2>
+<p>Parlons de votre projet</p>
+</div>
+
+<div class="contact">
+
+<form>
+
+<input type="text" placeholder="Nom">
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Votre message"></textarea>
+
+<button class="btn">ENVOYER</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 GAIA Drone — Tous droits réservés
+
+</footer>
+
+</body>
+</html>
