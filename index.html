@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GAIA Drone | Photographie & Vidéo Aérienne Professionnelle</title>
+  <title>GAIA Drone | Photographie & Vidéo Aérienne Professionnelle | EN COURS DE CONSTRUCTION...</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
 
@@ -31,12 +31,12 @@
     /* --- NAVIGATION --- */
     nav {
       position:fixed; top:0; width:100%;
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(15, 23, 42, 0.9);
       backdrop-filter: blur(12px);
       padding: 12px 5%;
       display:flex; justify-content:space-between; align-items:center;
       z-index:1000;
-      border-bottom: 1px solid rgba(92, 225, 255, 0.1);
+      border-bottom: 1px solid rgba(92, 225, 255, 0.2);
     }
 
     .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
@@ -44,17 +44,17 @@
     nav h2 { color: var(--text-light); font-weight: 800; font-size: 1.1rem; }
     
     .nav-toggle { display: none; }
-    .nav-menu { display:flex; list-style:none; gap:25px; align-items: center; }
+    .nav-menu { display:flex; list-style:none; gap:25px; }
     nav a { color: var(--text-light); text-decoration:none; font-weight:500; font-size: 0.9rem; transition: var(--transition); }
     nav a:hover { color: var(--primary); }
 
     /* --- HERO --- */
     header {
       min-height: 100vh;
-      background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)),
+      background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.8)),
                   url('phare.png') center/cover no-repeat;
       display:flex; flex-direction:column; justify-content:center; align-items:center;
-      text-align:center; padding: 120px 20px;
+      text-align:center; padding: 100px 20px;
       background-attachment: fixed;
     }
 
@@ -75,26 +75,25 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* --- SECTION PRÉSENTATION --- */
+    /* --- STYLE PRÉSENTATION --- */
     #intro {
       padding: 80px 10%;
       background: var(--bg-dark);
       text-align: center;
     }
     .intro-container { max-width: 900px; margin: 0 auto; }
-    .intro-text { font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 300; line-height: 1.6; color: var(--text-light); }
-    .intro-text span { color: var(--primary); font-weight: 700; }
-    .intro-line { width: 60px; height: 3px; background: var(--primary); margin: 30px auto 0; border-radius: 2px; }
+    .intro-text { font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 300; line-height: 1.5; color: var(--text-light); }
+    .intro-text span { color: var(--primary); font-weight: 800; letter-spacing: 2px; }
+    .intro-line { width: 60px; height: 2px; background: var(--primary); margin: 30px auto 0; opacity: 0.6; }
 
-    /* --- SECTIONS GÉNÉRAL --- */
+    /* --- SECTIONS --- */
     section { padding: 100px 8%; }
-    .section-title { text-align: center; margin-bottom: 50px; }
-    .section-title h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
-    .underline { width: 50px; height: 4px; background: var(--primary); margin: 15px auto 0; box-shadow: 0 0 10px var(--primary); }
+    .section-title h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); text-align: center; }
+    .underline { width: 50px; height: 4px; background: var(--primary); margin: 15px auto 50px; box-shadow: 0 0 10px var(--primary); }
 
     /* --- SERVICES --- */
     .services-grid {
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap:25px;
     }
     .card {
@@ -102,70 +101,67 @@
       border-radius: 15px; overflow: hidden;
       border: 1px solid rgba(255,255,255,0.05);
       transition: var(--transition);
-      display: flex; flex-direction: column;
     }
     .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-    .video-container { width: 100%; height: 200px; background: #000; overflow: hidden; }
+    .video-container { width: 100%; height: 180px; background: #000; overflow: hidden; }
     .video-container video { width: 100%; height: 100%; object-fit: cover; }
-    .card-content { padding: 30px; text-align: center; flex-grow: 1; }
+
+    .card-content { 
+      padding: 25px; 
+      text-align: center; 
+    }
     .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
-    .card p { font-size: 0.95rem; color: var(--text-muted); text-align: center; }
+    .card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
     /* --- GALERIE --- */
     .gallery-grid {
       display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap:15px;
     }
-    .gallery-item { height: 250px; border-radius: 10px; overflow: hidden; cursor: pointer; }
+    .gallery-item { height: 250px; border-radius: 10px; overflow: hidden; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item:hover img { transform: scale(1.05); }
 
     /* --- ABOUT --- */
     .about-container {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 50px; align-items: center;
     }
-    .about-image img { width: 100%; border-radius: 15px; border: 1px solid rgba(92, 225, 255, 0.3); }
-    .check-list { list-style: none; margin-top: 25px; }
-    .check-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+    .about-image img { width: 100%; border-radius: 15px; border: 1px solid var(--primary); }
+    .check-list { list-style: none; margin-top: 20px; }
+    .check-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 
     /* --- FORMULAIRE --- */
-    .contact-form { max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 15px; }
+    .contact-form { max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 30px; border-radius: 15px; }
     input, textarea {
-      width: 100%; padding: 15px; background: #0f172a; border: 1px solid rgba(92, 225, 255, 0.2);
-      border-radius: 8px; color: white; margin-top: 10px; font-family: inherit; transition: var(--transition);
+      width: 100%; padding: 12px; background: #0f172a; border: 1px solid rgba(92, 225, 255, 0.2);
+      border-radius: 8px; color: white; margin-top: 8px; font-family: inherit;
     }
-    input:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 10px rgba(92, 225, 255, 0.1); }
+    input:focus, textarea:focus { outline: none; border-color: var(--primary); }
 
     /* --- BOUTONS --- */
     .btn {
       display:inline-block; padding: 14px 30px; background: var(--primary); color: var(--bg-dark);
       text-decoration:none; border-radius:8px; font-weight:700; transition: var(--transition); cursor: pointer; border: none;
     }
-    .btn:hover { box-shadow: 0 0 20px rgba(92, 225, 255, 0.4); transform: scale(1.02); }
+    .btn:hover { box-shadow: 0 0 20px rgba(92, 225, 255, 0.4); filter: brightness(1.1); }
 
-    /* --- RESPONSIVE --- */
     @media (max-width: 768px) {
       header { background-attachment: scroll; }
-      section { padding: 80px 20px; }
-      
-      .nav-toggle-label { display: block; cursor: pointer; padding: 10px; }
+      section { padding: 60px 20px; }
+      .nav-toggle-label { display: block; cursor: pointer; order: 3; }
       .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
-        display: block; background: var(--primary); height: 2px; width: 25px; position: relative; transition: var(--transition);
+        display: block; background: var(--primary); height: 2px; width: 25px; position: relative;
       }
       .nav-toggle-label span::before { content: ''; position: absolute; top: -8px; }
       .nav-toggle-label span::after { content: ''; position: absolute; top: 8px; }
-
       .nav-menu {
         position: absolute; top: 100%; left: 0; width: 100%;
-        background: var(--bg-dark); flex-direction: column; gap: 0;
-        max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out;
+        background: var(--bg-dark); flex-direction: column;
+        max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
       }
-      .nav-menu li { width: 100%; }
-      .nav-menu a { display: block; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; }
-      .nav-toggle:checked ~ .nav-menu { max-height: 500px; }
-      
-      .btn-nav { display: none; } /* On cache le bouton devis du nav sur mobile pour simplifier */
+      .nav-menu a { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .nav-toggle:checked ~ .nav-menu { max-height: 400px; }
     }
   </style>
 </head>
@@ -174,7 +170,7 @@
 
   <nav>
     <a href="#" class="logo-container">
-      <img src="logo.png" alt="Logo GAIA Drone" class="logo-img">
+      <img src="logo.png" alt="Logo" class="logo-img">
       <h2>GAIA <span style="color:var(--primary)">DRONE</span></h2>
     </a>
 
@@ -184,28 +180,27 @@
     <ul class="nav-menu">
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Galerie</a></li>
-      <li><a href="#about">À propos</a></li>
+      <li><a href="#about">A propos</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     
-    <a href="#contact" class="btn btn-nav" style="padding: 10px 18px; font-size: 0.8rem;">DEVIS GRATUIT</a>
+    <a href="#contact" class="btn" style="padding: 10px 18px; font-size: 0.8rem; order: 2;">DEVIS</a>
   </nav>
 
   <header>
     <img src="logo.png" alt="Logo GAIA" class="hero-logo">
     <h1>Le ciel, votre nouveau <span>terrain</span></h1>
-       <a href="#services" class="btn">Nos prestations</a>
+    <p>Donnez une nouvelle dimension à vos projets.</p>
+    <a href="#services" class="btn">Nos prestations</a>
   </header>
 
   <section id="intro">
     <div class="intro-container">
       <p class="intro-text">
         Avec <span>GAIA</span>, explorez des possibilités infinies pour des photos et vidéos aériennes. 
-        Nous utilisons des vecteurs de dernière génération pour capturer des images qui racontent une histoire.</p>
-       <p></p>
-       <p></p>
-        <p>​Chaque projet est unique et que vous soyez un particulier ou un professionnel, nous sommes là pour vous aider à atteindre vos objectifs visuels.</p>
-   <div class="intro-line"></div>
+        Nous utilisons des vecteurs de dernière génération pour capturer des images qui racontent une histoire.
+      </p>
+      <div class="intro-line"></div>
     </div>
   </section>
 
@@ -217,37 +212,34 @@
     <div class="services-grid">
       <article class="card">
         <div class="video-container">
-          <video loop muted playsinline poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-mountain-landscape-40250-large.mp4" type="video/mp4">
-          </video>
+          <video loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-mountain-landscape-40250-large.mp4" type="video/mp4"></video>
         </div>
         <div class="card-content">
           <h3>Immobilier</h3>
-          <p>Sublimez vos biens et révélez leur environnement avec des prises de vue aériennes spectaculaires qui déclenchent le coup de cœur.</p>
+          <p>La mise en valeur immobilière par drone représente aujourd’hui un véritable atout pour sublimer un bien et capter l’attention des acquéreurs potentiels.
+          Grâce à des prises de vue aériennes spectaculaires, elle permet de révéler l’environnement global du bien, son implantation, ses volumes extérieurs ainsi que ses atouts souvent invisibles depuis le sol.</p>
         </div>
       </article>
 
       <article class="card">
         <div class="video-container">
-          <video loop muted playsinline poster="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=600">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-drone-view-of-a-coastal-city-and-the-ocean-40251-large.mp4" type="video/mp4">
-          </video>
+          <video loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-drone-view-of-a-coastal-city-and-the-ocean-40251-large.mp4" type="video/mp4"></video>
         </div>
         <div class="card-content">
           <h3>BTP & Inspection</h3>
-          <p>Évaluez l'état de vos infrastructures en toute sécurité. Un diagnostic précis, rapide et économique pour votre patrimoine.</p>
+          <p>L’inspection par drone est une solution rapide, sécurisée et précise pour évaluer l’état de bâtiments et d’infrastructures. Elle permet d’accéder facilement aux zones difficiles tout en évitant les risques humains et les moyens lourds.
+          Grâce à des images haute résolution, le drone détecte efficacement les anomalies et facilite un diagnostic fiable. Il réduit les coûts d’intervention et constitue un outil moderne d’aide à la décision pour la maintenance et la gestion du patrimoine.</p>
         </div>
       </article>
 
       <article class="card">
         <div class="video-container">
-          <video loop muted playsinline poster="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-flying-over-a-dense-green-forest-40244-large.mp4" type="video/mp4">
-          </video>
+          <video loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-flying-over-a-dense-green-forest-40244-large.mp4" type="video/mp4"></video>
         </div>
         <div class="card-content">
           <h3>Événementiel</h3>
-          <p>Capturez l'ampleur et l'émotion de vos événements. Des perspectives immersives pour une communication marquante.</p>
+          <p>La captation événementielle par drone offre une perspective spectaculaire et immersive, idéale pour valoriser tous types d’événements. Elle permet de saisir l’ampleur, l’ambiance et les moments forts avec des images dynamiques et originales.
+          En apportant un regard inédit depuis les airs, le drone renforce l’impact visuel et émotionnel des contenus, tout en créant des supports attractifs pour la communication et la promotion. C’est un outil moderne pour marquer les esprits et sublimer chaque événement.</p>
         </div>
       </article>
     </div>
@@ -259,10 +251,10 @@
         <div class="underline"></div>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600" alt="Paysage montagne"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=600" alt="Lac et montagnes"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600" alt="Vue aérienne vallée"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600" alt="Forêt vue du ciel"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600" alt="Gal1"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=600" alt="Gal2"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600" alt="Gal3"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600" alt="Gal4"></div>
     </div>
   </section>
 
@@ -270,16 +262,15 @@
     <div class="about-container">
       <div class="about-text">
         <h2>L'expertise <span style="color:var(--primary)">GAIA</span></h2>
-        <p>Opérateur certifié DGAC, nous mettons la technologie au service de votre image avec une sécurité totale et une discrétion maximale.</p>
+        <p>Opérateur certifié DGAC, nous mettons la technologie au service de votre image avec une sécurité totale.</p>
         <ul class="check-list">
-            <li><span style="color:var(--primary)">✔</span> DJI Mavic 3 Pro (Capture 5.1K / 4K 120fps)</li>
-            <li><span style="color:var(--primary)">✔</span> Assurance RC Professionnelle spécifique drone</li>
-            <li><span style="color:var(--primary)">✔</span> Télépilote diplômé (Scénarios S1, S2, S3)</li>
-            <li><span style="color:var(--primary)">✔</span> Post-production & Montage vidéo inclus</li>
+            <li><span style="color:var(--primary)">✔</span> DJI Mavic 3 Pro (4K/60fps)</li>
+            <li><span style="color:var(--primary)">✔</span> Assurance RC Professionnelle</li>
+            <li><span style="color:var(--primary)">✔</span> Montage vidéo professionnel</li>
         </ul>
       </div>
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?q=80&w=800" alt="Pilote de drone en action">
+        <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?q=80&w=800" alt="Drone">
       </div>
     </div>
   </section>
@@ -290,46 +281,29 @@
         <div class="underline"></div>
     </div>
     <div class="contact-form">
-      <form action="#" method="POST">
+      <form>
         <input type="text" placeholder="Nom complet" required>
         <input type="email" placeholder="Email professionnel" required>
-        <textarea placeholder="Décrivez votre besoin (type de mission, lieu, date souhaitée...)" rows="5" required></textarea>
-        <button class="btn" type="submit" style="width: 100%; margin-top: 20px;">Envoyer la demande</button>
+        <textarea placeholder="Décrivez votre besoin..." rows="5"></textarea>
+        <button class="btn" type="submit" style="width: 100%; margin-top: 20px;">Envoyer</button>
       </form>
     </div>
   </section>
 
-  <footer style="padding: 60px 20px; text-align: center; border-top: 1px solid rgba(92,225,255,0.1); background: #0b1222;">
-    <p style="margin-bottom: 10px;"><strong>GAIA DRONE</strong> — Solutions Aériennes Professionnelles</p>
-    <p style="font-size: 0.85rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
-      © 2026 | 78140 Vélizy-Villacoublay, France | SIRET 98122440500036 | 
-      <br>Mail : gaia-drone@outlook.fr | Tel : 06 30 11 68 16
-    </p>
+  <footer style="padding: 40px; text-align: center; border-top: 1px solid rgba(92,225,255,0.1);">
+    <p>GAIA DRONE — Tous droits réservés | © 2026| 
+      78140 Vélizy-Villacoublay, France | Siret 98122440500036 | Mail : gaia-drone@outlook.fr | Tel : 06 30 11 68 16 | </p>
   </footer>
 
   <script>
-    // Optimisation : lecture automatique des vidéos au scroll uniquement
     const videos = document.querySelectorAll('video');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) { 
-          entry.target.play().catch(e => console.log("Auto-play bloqué par le navigateur")); 
-        } else { 
-          entry.target.pause(); 
-        }
+        if (entry.isIntersecting) { entry.target.play(); } 
+        else { entry.target.pause(); }
       });
-    }, { threshold: 0.3 });
-    
+    }, { threshold: 0.5 });
     videos.forEach(v => observer.observe(v));
-
-    // Fermeture automatique du menu mobile après clic
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const navToggle = document.getElementById('nav-toggle');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.checked = false;
-      });
-    });
   </script>
 
 </body>
