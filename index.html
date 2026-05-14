@@ -101,8 +101,23 @@
     .video-container { width: 100%; height: 180px; background: #000; overflow: hidden; }
     .video-container video { width: 100%; height: 100%; object-fit: cover; }
 
-    .card-content { padding: 20px; }
-    .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.3rem; }
+   .card-content { 
+  padding: 25px; /* Un peu plus d'espace pour laisser respirer le texte */
+  text-align: center; /* Centre le titre ET le paragraphe */
+}
+
+.card h3 { 
+  color: var(--primary); 
+  margin-bottom: 15px; 
+  font-size: 1.4rem; 
+  /* Pas besoin de text-align ici, il hérite du parent */
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
 
     /* --- GALERIE --- */
     .gallery-grid {
