@@ -76,7 +76,38 @@
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+/* --- STYLE PRÉSENTATION --- */
+    #intro {
+      padding: 80px 10%;
+      background: var(--bg-dark);
+      text-align: center;
+    }
 
+    .intro-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .intro-text {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--text-light);
+    }
+
+    .intro-text span {
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .intro-line {
+      width: 60px;
+      height: 2px;
+      background: var(--primary);
+      margin: 30px auto 0;
+      opacity: 0.6;
+    }
 
     /* --- SECTIONS --- */
     section { padding: 100px 8%; }
@@ -196,13 +227,22 @@
   </nav>
 
   <header>
+    </section>
     <img src="logo.png" alt="Logo GAIA" class="hero-logo">
     
     <h1>Le ciel, votre nouveau <span>terrain</span></h1>
     <p>Donnez une nouvelle dimension à vos projets.</p>
     <a href="#services" class="btn">Nos prestations</a>
   </header>
-
+<section id="intro">
+    <div class="intro-container">
+      <p class="intro-text">
+        Avec <span>GAIA</span>, explorez des possibilités infinies pour des photos et vidéos aériennes. 
+        Nous utilisons des vecteurs de dernière génération pour capturer des images qui racontent une histoire.
+      </p>
+      <div class="intro-line"></div>
+    </div>
+  </section>
   <section id="services">
     <div class="section-title">
         <h2>Nos Services</h2>
