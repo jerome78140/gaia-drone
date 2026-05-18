@@ -113,6 +113,20 @@
     .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
     .card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
+.video-container {
+  width: 100%;
+  height: 180px;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+    
     /* --- GALERIE --- */
     .gallery-grid {
       display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -252,9 +266,15 @@
     </div>
     <div class="services-grid">
       <article class="card">
-        <div class="video-container">
-          <video loop muted playsinline><source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-mountain-landscape-40250-large.mp4" type="video/mp4"></video>
-        </div>
+       <div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/xvAPEMXC_8I?autoplay=1&mute=1&loop=1&playlist=ID_DE_TA_VIDEO&controls=0&showinfo=0&rel=0"
+    title="Vidéo drone"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
         <div class="card-content">
           <h3>Immobilier</h3>
           <p>La mise en valeur immobilière par drone représente aujourd’hui un véritable atout pour sublimer un bien et capter l’attention des acquéreurs potentiels.
