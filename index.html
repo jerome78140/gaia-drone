@@ -305,7 +305,14 @@ header * {
 }
     
     @media (max-width: 768px) {
-      header { background-attachment: scroll; }
+      header {
+    background-attachment: scroll;
+    background-position: center top;
+    min-height: 100svh;
+    padding-top: 120px;
+  }
+
+}
       section { padding: 60px 20px; }
       .nav-toggle-label { display: block; cursor: pointer; order: 3; }
       .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
