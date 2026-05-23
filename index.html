@@ -184,6 +184,15 @@ header * {
   grid-auto-rows: 180px;
   gap: 15px;
 }
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 140px;
+  }
+  .gallery-item {
+    grid-column: span 6 !important;
+  }
+}    
 .gallery-item {
   border-radius: 14px;
   overflow: hidden;
