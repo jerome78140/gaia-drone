@@ -432,14 +432,5 @@ header::before {
       78140 Vélizy-Villacoublay, France | Siret 98122440500036 | Mail : gaia-drone@outlook.fr | Tel : 06 30 11 68 16 | </p>
   </footer>
 
-  <script>
-    const videos = document.querySelectorAll('video');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.play(); } 
-        else { entry.target.pause(); }
-      });
-    }, { threshold: 0.5 });
-    videos.forEach(v => observer.observe(v));
-  </script></body>
+</body>
 </html>
