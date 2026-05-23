@@ -81,7 +81,21 @@ header::before {
   inset:0;
   background: radial-gradient(circle at center, rgba(46,197,255,0.15), transparent 60%);
 }
+header::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to top,
+    rgba(15,23,42,0.85),
+    rgba(15,23,42,0.2)
+  );
+}
 
+header * {
+  position: relative;
+  z-index: 2;
+}
     header h1 { font-size: clamp(2.2rem, 8vw, 4.5rem); font-weight: 800; margin-bottom:20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
     header h1 span { color: var(--primary); text-shadow: 0 0 20px rgba(46, 197, 255, 0.4); }
     header p { max-width: 650px; font-size: clamp(1rem, 4vw, 1.2rem); margin-bottom: 40px; color: #fff; }
@@ -125,9 +139,13 @@ header::before {
       border-radius: 15px; overflow: hidden;
       border: 1px solid rgba(255,255,255,0.05);
       transition: var(--transition);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
-    .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-  
+    .card:hover {
+      border-color: var(--primary);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+   }  
     .card-content { 
       padding: 25px; 
       text-align: center; 
@@ -137,7 +155,7 @@ header::before {
 
 .video-container {
   width: 100%;
-  height: 220px;
+  height: 240px;
   background: #000;
   overflow: hidden;
   position: relative;
@@ -147,16 +165,16 @@ header::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120%;
-  height: 120%;
+  width: 140%;
+  height: 140%;
   transform: translate(-50%, -50%);
   border: none;
   pointer-events: none;
-  transition: 0.6s ease;
+  transition: transform 0.8s ease;
 }
 
 .card:hover iframe {
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translate(-50%, -50%) scale(1.08);
 }
     /* --- GALERIE --- */
   .gallery-grid {
@@ -171,9 +189,20 @@ header::before {
   overflow: hidden;
   position: relative;
 }
-    .gallery-item { border-radius: 10px; overflow: hidden; }
-   .gallery-item img { width: 100%; display: block; border-radius: 12px; transition: var(--transition); }
-    .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+  .gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+   .gallery-item:hover img {
+  transform: scale(1.08);
+}
 
     /* --- ABOUT --- */
     .about-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 80px; align-items: center; }
@@ -240,6 +269,22 @@ header::before {
     }
     .btn:hover { box-shadow: 0 0 20px rgba(46, 197, 255, 0.4); filter: brightness(1.1); }
 
+    .footer {
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(46,197,255,0.1);
+}
+
+.footer-infos {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+    
     @media (max-width: 768px) {
       header { background-attachment: scroll; }
       section { padding: 60px 20px; }
@@ -417,20 +462,25 @@ header::before {
         <div class="underline"></div>
     </div>
     <div class="contact-form">
-      <form>
+     <form action="https://formspree.io/f/mnjrzage" method="POST">
         <input type="text" placeholder="Nom complet" required>
         <input type="email" placeholder="Email professionnel" required>
         <textarea placeholder="Décrivez votre besoin..." rows="5"></textarea>
         <button class="btn" type="submit" style="width: 100%; margin-top: 20px;">Envoyer</button>
-        <form action="https://formspree.io/f/mnjrzage" method="POST">
-      </form>
+    </form>
     </div>
   </section>
 
-  <footer style="padding: 40px; text-align: center; border-top: 1px solid rgba(46,197,255,0.1);">
-    <p>GAIA DRONE — Tous droits réservés | © 2026| 
-      78140 Vélizy-Villacoublay, France | Siret 98122440500036 | Mail : gaia-drone@outlook.fr | Tel : 06 30 11 68 16 | </p>
-  </footer>
+<footer class="footer">
+  <p>GAIA DRONE © 2026</p>
+
+  <div class="footer-infos">
+    <span>78140 Vélizy-Villacoublay</span>
+    <span>SIRET : 98122440500036</span>
+    <span>gaia-drone@outlook.fr</span>
+    <span>06 30 11 68 16</span>
+  </div>
+</footer>
 
 </body>
 </html>
