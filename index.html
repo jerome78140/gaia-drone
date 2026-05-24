@@ -421,7 +421,7 @@ header * {
   font-style: italic;
 }
   
- .check-list {
+.check-list {
   list-style: none;
   margin-top: 20px;
 
@@ -430,15 +430,18 @@ header * {
   gap: 12px;
 
   align-items: center; /* centre le bloc global */
+  padding: 0;
 }
 
 .check-list li {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 18px auto; /* icône + texte */
   gap: 10px;
 
-  width: fit-content;   /* IMPORTANT : empêche d'aller au bord */
-  padding: 0 10px;      /* petit air sur les côtés */
+  align-items: center;
+
+  max-width: 420px;   /* clé du rendu propre */
+  width: 100%;
 }
 
     /* --- FORMULAIRE --- */
