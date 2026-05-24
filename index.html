@@ -421,8 +421,24 @@ header * {
   font-style: italic;
 }
   
-    .check-list { list-style: none; margin-top: 20px; }
-    .check-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .check-list {
+  list-style: none;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.check-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+  text-align: center;
+}
 
     /* --- FORMULAIRE --- */
     .contact-form { max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 30px; border-radius: 15px; }
