@@ -421,26 +421,24 @@ header * {
   font-style: italic;
 }
   
-  .check-list {
+ .check-list {
   list-style: none;
   margin-top: 20px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 12px;
+
+  align-items: center; /* centre le bloc global */
 }
 
 .check-list li {
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
-
   gap: 10px;
-  text-align: center;
+
+  width: fit-content;   /* IMPORTANT : empêche d'aller au bord */
+  padding: 0 10px;      /* petit air sur les côtés */
 }
 
     /* --- FORMULAIRE --- */
