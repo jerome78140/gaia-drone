@@ -69,6 +69,12 @@ nav h2 {
     
 .nav-menu {
   z-index: 999;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ .nav-menu {
+  opacity: 1;
 }
     
 /* MENU CENTRÉ */
