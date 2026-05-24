@@ -31,27 +31,138 @@ radial-gradient(circle at bottom right, rgba(46,197,255,0.05), transparent 30%),
       overflow-x: hidden;
     }
        
-    /* --- NAVIGATION --- */
-    nav {
-      position:fixed; top:0; width:100%;
-      background: rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(12px);
-      padding: 12px 5%;
-      display:flex; justify-content:space-between; align-items:center;
-      z-index:1000;
-      border-bottom: 1px solid rgba(46, 197, 255, 0.2);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+   /* --- NAVIGATION --- */
 
-    .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .logo-img { height: 45px; width: auto; border-radius: 4px; }
-    nav h2 { color: var(--text-light); font-weight: 800; font-size: 1.1rem; }
-    
-    .nav-toggle { display: none; }
-    .nav-menu { display:flex; list-style:none; gap:25px; }
-    nav a { color: var(--text-light); text-decoration:none; font-weight:500; font-size: 0.9rem; transition: var(--transition); }
-    nav a:hover { color: var(--primary); }
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(46, 197, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  z-index: 1000;
+}
 
-   ::selection { background: var(--primary); color: #fff; }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+  border-radius: 4px;
+}
+
+nav h2 {
+  color: var(--text-light);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* MENU CENTRÉ */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  margin: 0 auto;
+}
+
+.nav-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.nav-menu a:hover {
+  color: var(--primary);
+}
+
+/* PARTIE DROITE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* BURGER */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: var(--primary);
+  height: 2px;
+  width: 25px;
+  position: relative;
+}
+
+.nav-toggle-label span::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+}
+
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-dark);
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    gap: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-toggle-label {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-toggle:checked ~ .nav-menu {
+    max-height: 400px;
+  }
+
+}
 
     /* --- HERO --- */
   header {
@@ -331,24 +442,33 @@ header * {
 
 <body>
 
-  <nav>
-    <a href="#" class="logo-container">
-      <img src="logo.png" alt="Logo" class="logo-img">
-      <h2>GAIA <span style="color:var(--primary)">DRONE</span></h2>
+ <nav>
+  
+  <a href="#" class="logo-container">
+    <img src="logo.png" alt="Logo" class="logo-img">
+    <h2>GAIA <span style="color:var(--primary)">DRONE</span></h2>
+  </a>
+
+  <ul class="nav-menu">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Galerie</a></li>
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="#contact" class="btn" style="padding: 10px 18px; font-size: 0.8rem;">
+      DEVIS
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
 
-    <ul class="nav-menu">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Galerie</a></li>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    
-    <a href="#contact" class="btn" style="padding: 10px 18px; font-size: 0.8rem; order: 2;">DEVIS</a>
-  </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  </div>
+
+</nav>
 
   <header>
     <img src="logo.png" alt="Logo GAIA" class="hero-logo">
