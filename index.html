@@ -339,6 +339,7 @@ header * {
 }
 
 /* VIDEO CENTRALE */
+/* VIDEO CENTRALE */
 .gallery-video {
   grid-column: 2 / span 2;
   grid-row: 2 / span 2;
@@ -346,18 +347,36 @@ header * {
   position: relative;
   overflow: hidden;
   border-radius: 18px;
+
   background: black;
+
+  /* 🔵 CADRE BLEU */
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 25px rgba(46, 197, 255, 0.35);
+
+  /* centrage parfait dans la cellule grid */
+  justify-self: center;
+  align-self: center;
+
+  width: 100%;
+  height: 100%;
 
   aspect-ratio: 16 / 9;
 }
 
+/* iframe */
 .gallery-video iframe {
   width: 100%;
   height: 100%;
   border: 0;
   display: block;
 }
-
+    
+.gallery-video:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(46, 197, 255, 0.5);
+  transition: 0.4s ease;
+}
 /* HOVER */
 .gallery-photo,
 .gallery-video {
