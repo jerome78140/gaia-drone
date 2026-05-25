@@ -307,7 +307,7 @@ header * {
   transform: translate(-50%, -50%) scale(1.05);
 }
     
- /* --- GALERIE CINEMATIC --- */
+/* --- GALERIE --- */
 
 .gallery-frame {
   display: grid;
@@ -316,107 +316,72 @@ header * {
   gap: 14px;
   max-width: 1400px;
   margin: auto;
-  align-items: stretch;
 }
-    
-/* BLOCS */
 
-.gallery-video iframe {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  border: none;
-
-  pointer-events: none;
+/* PHOTOS */
+.gallery-photo {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
 }
-    
-/* IMAGES */
 
 .gallery-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  transition: transform 0.6s ease;
-
   display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery-photo:hover img {
+  transform: scale(1.08);
 }
 
 /* VIDEO CENTRALE */
-
 .gallery-video {
   grid-column: 2 / 4;
   grid-row: span 2;
-
   border-radius: 18px;
   overflow: hidden;
+  position: relative;
 
   border: 2px solid rgba(46,197,255,0.4);
   box-shadow:
     0 0 35px rgba(46,197,255,0.20),
     0 20px 50px rgba(0,0,0,0.4);
 }
-    .gallery-video {
-  position: relative; /* IMPORTANT */
-}
 
 .gallery-video iframe {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140%;
-  height: 140%;
-  transform: translate(-50%, -50%);
-  border: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
-  
-/* HOVER */
 
+/* HOVER */
 .gallery-photo:hover,
 .gallery-video:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+  transition: 0.4s ease;
 }
 
-.gallery-photo:hover img {
-  transform: scale(1.08);
-}
-    
-.gallery-photo {
-  border-radius: 18px;
-  overflow: hidden;
-}
-    
 /* RESPONSIVE TABLETTE */
-
 @media (max-width: 1100px) {
-
   .gallery-frame {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
   }
 
   .gallery-video {
     grid-column: 1 / -1;
     grid-row: auto;
-
     aspect-ratio: 16 / 9;
-  }
-
-  .gallery-photo {
-    aspect-ratio: 4 / 3;
   }
 }
 
 /* MOBILE */
-
 @media (max-width: 700px) {
-
   .gallery-frame {
     grid-template-columns: 1fr;
   }
