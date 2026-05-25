@@ -71,9 +71,9 @@ nav h2 {
 .nav-menu {
   z-index: 999;
   transition: max-height 0.4s ease, opacity 0.3s ease;
- opacity: 1;              /* 👈 visible par défaut */
-  transition: none;       /* optionnel */
-}
+  opacity: 1;              /* 👈 visible par défaut */
+ }
+    
 .nav-toggle:checked ~ .nav-menu {
   opacity: 1;
 }
@@ -173,6 +173,7 @@ nav h2 {
   .nav-toggle:checked ~ .nav-menu {
     max-height: 400px;
   }
+  
   .nav-right {
   margin-left: auto;
 }
@@ -196,7 +197,7 @@ nav h2 {
   animation: heroZoom 18s ease-in-out infinite alternate;
 }
 
-    @keyframes heroZoom {
+  @keyframes heroZoom {
   from { background-size: 100%; }
   to { background-size: 110%; }
 }
@@ -207,6 +208,7 @@ header::before {
   inset:0;
   background: radial-gradient(circle at center, rgba(46,197,255,0.15), transparent 60%);
 }
+    
 header::after {
   content:"";
   position:absolute;
@@ -222,6 +224,7 @@ header * {
   position: relative;
   z-index: 2;
 }
+    
     header h1 { font-size: clamp(2.2rem, 8vw, 4.5rem); font-weight: 800; margin-bottom:20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
     header h1 span { color: var(--primary); text-shadow: 0 0 20px rgba(46, 197, 255, 0.4); }
     header p { max-width: 650px; font-size: clamp(1rem, 4vw, 1.2rem); margin-bottom: 40px; color: #fff; }
@@ -260,6 +263,7 @@ header * {
       display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap:25px;
     }
+    
     .card {
       background: var(--bg-card);
       border-radius: 15px; overflow: hidden;
@@ -267,6 +271,7 @@ header * {
       transition: var(--transition);
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
+    
     .card:hover {
       border-color: var(--primary);
       transform: translateY(-8px);
@@ -276,6 +281,7 @@ header * {
       padding: 25px; 
       text-align: center; 
     }
+    
     .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
     .card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
@@ -315,11 +321,17 @@ header * {
 /* BLOCS */
 
 .gallery-video iframe {
+  position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 100%;
+
   border: none;
-  display: block;
+
+  pointer-events: none;
 }
+    
 /* IMAGES */
 
 .gallery-photo img {
@@ -334,12 +346,16 @@ header * {
 
 /* VIDEO CENTRALE */
 
-.gallery-video {
+  .gallery-video {
+  position: relative;
+
   grid-column: 2 / 4;
   grid-row: 2 / 4;
 
   border-radius: 18px;
   overflow: hidden;
+
+  aspect-ratio: 16 / 9;
 
   border: 2px solid rgba(46,197,255,0.4);
 
@@ -347,33 +363,19 @@ header * {
     0 0 35px rgba(46,197,255,0.20),
     0 20px 50px rgba(0,0,0,0.4);
 }
+
 .gallery-video iframe {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140%;
-  height: 140%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
   border: none;
+
   pointer-events: none;
 }
-    .gallery-video {
-  grid-column: 2 / 4;
-  grid-row: 2 / 4;
-
-  border-radius: 18px;
-  overflow: hidden;
-
-  border: 2px solid rgba(46,197,255,0.4);
-
-  box-shadow:
-    0 0 35px rgba(46,197,255,0.20),
-    0 20px 50px rgba(0,0,0,0.4);
-}
-    .gallery-video {
-  position: relative;
-}
-
+  
 /* HOVER */
 
 .gallery-photo:hover,
@@ -385,10 +387,12 @@ header * {
 .gallery-photo:hover img {
   transform: scale(1.08);
 }
+    
 .gallery-photo {
   border-radius: 18px;
   overflow: hidden;
 }
+    
 /* RESPONSIVE TABLETTE */
 
 @media (max-width: 1100px) {
@@ -427,8 +431,8 @@ header * {
 }
     
     /* --- ABOUT --- */
-    .about-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 80px; align-items: center; }
-   .about-text p {
+  .about-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 80px; align-items: center; }
+  .about-text p {
   font-size: 1.05rem;
   line-height: 2;
   color: #d6e2f0;
@@ -438,21 +442,23 @@ header * {
   text-align: justify;
 }
 
-    .about-text h2 {
+  .about-text h2 {
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
-.about-text h2 {
+    
+ .about-text h2 {
   text-align: center;
   margin-bottom: 30px;
 }
-    .about-text {
+  .about-text {
   padding-right: 15px;
   position: relative;
   overflow: hidden;     
 }
-.about-text::before {
+    
+ .about-text::before {
   content: "";
   position: absolute;
 
@@ -471,15 +477,18 @@ header * {
   pointer-events: none;
   z-index: 0;
 }
-    .about-text * {
+    
+  .about-text * {
   position: relative;
   z-index: 1;
 }
-.about-text p {
+    
+ .about-text p {
   margin-bottom: 14px;
   line-height: 1.9;
 }
-.about-image img {
+    
+ .about-image img {
   width: 360px;
   height: 360px;
   object-fit: cover;
@@ -490,7 +499,8 @@ header * {
   display: block;
   margin: 0 auto;
 }
-    .about-image-caption {
+    
+  .about-image-caption {
   text-align: center;
   margin-top: 15px;
   font-size: 0.95rem;
@@ -498,7 +508,7 @@ header * {
   font-style: italic;
 }
   
-.check-list {
+ .check-list {
   list-style: none;
   margin-top: 20px;
 
@@ -510,7 +520,7 @@ header * {
   padding: 0;
 }
 
-.check-list li {
+ .check-list li {
   display: grid;
   grid-template-columns: 18px auto; /* icône + texte */
   gap: 10px;
@@ -527,20 +537,23 @@ header * {
       width: 100%; padding: 12px; background: #0f172a; border: 1px solid rgba(46, 197, 255, 0.2);
       border-radius: 8px; color: white; margin-top: 8px; font-family: inherit;
     }
+    
     input:focus, textarea:focus { outline: none; border-color: var(--primary); }
 
     /* --- BOUTONS --- */
+    
     .btn {
       display:inline-block; padding: 14px 30px; background: var(--primary); color: var(--bg-dark);
       text-decoration:none; border-radius:8px; font-weight:700; transition: var(--transition); cursor: pointer; border: none;
     }
+    
     .btn:hover { box-shadow: 0 0 20px rgba(46, 197, 255, 0.4); filter: brightness(1.1); }
 
     .footer {
-  padding: 40px 20px;
-  text-align: center;
-  border-top: 1px solid rgba(46,197,255,0.1);
-}
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(46,197,255,0.1);
+  }
 
 .footer-infos {
   margin-top: 15px;
@@ -564,6 +577,7 @@ header * {
       .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
         display: block; background: var(--primary); height: 2px; width: 25px; position: relative;
       }
+      
       .nav-toggle-label span::before { content: ''; position: absolute; top: -8px; }
       .nav-toggle-label span::after { content: ''; position: absolute; top: 8px; }
       .nav-menu {
@@ -571,6 +585,7 @@ header * {
         background: var(--bg-dark); flex-direction: column;
         max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
       }
+      
       .nav-menu a { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
       .nav-toggle:checked ~ .nav-menu { max-height: 400px; }
     }    
@@ -784,8 +799,6 @@ header * {
     <img src="https://raw.githubusercontent.com/jerome78140/gaia-drone/main/Maison_Papé.webp"
          alt="Vue aérienne d'une maison">
   </div>
-
-</div>
 
 </div>
   </section>
