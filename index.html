@@ -364,8 +364,15 @@ header * {
 
 /* iframe */
 .gallery-video iframe {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  width: 102%;
   height: 100%;
+  
+  transform: translate(-50%, -50%);
+  
   border: 0;
   display: block;
 }
