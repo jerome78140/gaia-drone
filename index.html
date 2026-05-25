@@ -339,33 +339,37 @@ header * {
 }
 
 /* VIDEO CENTRALE */
-/* VIDEO CENTRALE */
 .gallery-video {
   grid-column: 2 / span 2;
   grid-row: 2 / span 2;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   position: relative;
-}
+  overflow: hidden;
 
-/* IFRAME VIDÉO */
-.gallery-video iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-
-  border: 2px solid rgba(46,197,255,0.4);
   border-radius: 18px;
 
   box-shadow:
     0 0 35px rgba(46,197,255,0.20),
     0 20px 50px rgba(0,0,0,0.4);
+}
 
-  background: black;
+.gallery-video iframe {
+  position: absolute;
 
-  display: block;
+  top: 50%;
+  left: 50%;
+
+  width: 177.77%;
+  height: 100%;
+
+  min-width: 100%;
+  min-height: 177.77%;
+
+  transform: translate(-50%, -50%);
+
+  border: none;
+
+  pointer-events: none;
 }
 
 /* HOVER */
